@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<SCRIPT type="text/javascript">
+	window.history.forward();
+	function noBack() { window.history.forward(); }
+</SCRIPT>
+</HEAD>
+<BODY onload="noBack();" 
+	onpageshow="if (event.persisted) noBack();" onunload="">
+
+<head>
+<meta Http-Equiv="Cache-Control" Content="no-cache">
+<meta Http-Equiv="Pragma" Content="no-cache">
+<meta Http-Equiv="Expires" Content="0">
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+  height: 300px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+
+
+
+<header>
+  <h3>Himalaya Hostel</h3>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li> <%= username %> </li>
+      <li> <%= sid %> </li>
+      </ul>
+      
+      <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="http://localhost:3000/logout">Log Out</a></li>
+    </ul>
+  </nav>
+  
+  <article>
+  <ul>
+    <li><button>BILL CHECK</button></li></ul>
+     <ul><li><button>REPAIR REQUEST</button></li></ul>
+     <ul><li><button>MESS OFF</button></li></ul>
+ <ul><li><button>FEEDBACK</button></li></ul>
+    </ul>
+  </article>
+</section>
+
+<footer>
+  
+</footer>
+
+</body>
+</html>
