@@ -163,11 +163,23 @@ app.post('/',urlencodedParser,
 								
 				res.render('repair2',{username:name,sid:sid})			
 					
-			    var sql2 = "UPDATE repair SET  type=?, description=? where sid=?";
-				con.query(sql2,[ type,desc,sid ],
-				function(err,result,fields)
-				{
-				});
+			       var sql2 = "SELECT * FROM repair WHERE sid = ?";
+					con.query(sq12,[sid],function(err,results,fields)
+					{
+						if(result.length > 0){}
+						else
+						{
+					
+							var sql23 = "INSERT INTO repair VALUES (?,?,?)";
+							con.query(sql3,[ type,desc,sid ],
+							function(err,result,fields)
+							{
+							});
+						}
+					});
+				
+				
+				
 				});
 				
 				
