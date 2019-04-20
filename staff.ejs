@@ -125,14 +125,14 @@ tr:nth-child(even) {
 <table>
   <tr>
     <th>SID</th>
-    <th>TYPE</th>
+    <th>ROOM_NO</th>
     <th>DESCRIPTION</th>
   </tr>
 
 <% for(let i=0; i < data.length; i++) { %>
    <tr>
-     <td><%= data[i].sid %></td>
-     <td><%= data[i].type %></td>
+     <td><%= data[i].SID %></td>
+     <td><%= data[i].Room_No %></td>
 	 <td><%= data[i].description %></td>
    </tr>
 <% } %>
