@@ -229,7 +229,8 @@ app.post('/',urlencodedParser,
 		function(err, result, fields) 
 		{
 			
-			if(result.length > 0){
+			if(result.length > 0)
+			{
 				var name = result[0].username;
 				
 		
@@ -239,42 +240,39 @@ app.post('/',urlencodedParser,
 		function(err, result2, fields)
 		{
 			
-			var type=result2[0].TYPE;
+			var type = result2[0].type;
 			console.log(type);
 			
-			var sql3 = "SELECT * FROM repair WHERE type = ?";
-		con.query(sql3, [ type ], 
+			var sql4 = "CREATE TABLE TABLA SELECT SID,Room_No,type,description FROM student NATURAL JOIN repair";
+			con.query(sql4,function(err, result01, fields){//console.log(result01);
+			});
+			//console.log(result01);
+			
+			var sql3 = "SELECT SID,Room_No,description FROM TABLA WHERE type = ?";
+		con.query(sql3, [type],
 		   function(err, result3, fields) 
 		   {
 			  console.log(result3);
-			  
-			  var sql4 = "SELECT * FROM result3 JOIN  student ON student.SID=result3.sid";
-			  
-              con.query(sql4, function (err, result4) {
 		
-				
-				console.log(result4);
-				res.render('staff',{username:name,data:result4});
-			  
-			   
-			});	
-		   });
+		    		
 			
-			
-			
-	
-			
+			res.render('staff',{username:name,data:result3});
+			//res.sendFile(__dirname+ '/login2.html');
 		});
 		
-		}
+		var sql5 = "DROP TABLE TABLA";
+		con.query(sql5,function(err,results,fields){});
 		
-			
+		});
+		
+			}
 			
 			else
 				res.sendFile(__dirname+ '/login2.html');
 			
 		});
 	}
+	
 	
 	
 	
